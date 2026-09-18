@@ -63,7 +63,7 @@ export default function Checkout() {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center">
         <h2 className="text-2xl font-bold mb-4">Your cart is empty</h2>
-        <Link to="/" className="text-blue-600 hover:underline">Go back to shopping</Link>
+        <Link to="/" className="text-primary-600 hover:underline">Go back to shopping</Link>
       </div>
     );
   }
@@ -85,12 +85,12 @@ export default function Checkout() {
           </div>
           <div className="flex justify-between">
             <span className="text-gray-600">Estimated Delivery</span>
-            <span className="font-medium text-blue-600">3-5 Business Days</span>
+            <span className="font-medium text-primary-600">3-5 Business Days</span>
           </div>
         </div>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to={`/track?order=${orderId}`} className="bg-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-blue-700 transition-colors inline-block">
+          <Link to={`/track?order=${orderId}`} className="bg-primary-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-primary-700 transition-colors inline-block">
             Track Order
           </Link>
           <Link to="/" className="bg-gray-100 text-gray-800 font-bold px-8 py-4 rounded-xl hover:bg-gray-200 transition-colors inline-block">
@@ -110,11 +110,11 @@ export default function Checkout() {
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             
             {/* Step 1: Shipping Address */}
-            <div className={`bg-white rounded-2xl shadow-sm border ${step === 1 ? 'border-blue-500 ring-1 ring-blue-500' : 'border-gray-100'} p-6 transition-all`}>
+            <div className={`bg-white rounded-2xl shadow-sm border ${step === 1 ? 'border-primary-500 ring-1 ring-primary-500' : 'border-gray-100'} p-6 transition-all`}>
               <div className="flex items-center gap-3 mb-6 border-b pb-4">
-                <MapPin className={`w-6 h-6 ${step >= 1 ? 'text-blue-600' : 'text-gray-400'}`} />
+                <MapPin className={`w-6 h-6 ${step >= 1 ? 'text-primary-600' : 'text-gray-400'}`} />
                 <h2 className="text-lg font-bold">1. Shipping Address</h2>
-                {step > 1 && <button type="button" onClick={() => setStep(1)} className="ml-auto text-sm text-blue-600 font-medium">Edit</button>}
+                {step > 1 && <button type="button" onClick={() => setStep(1)} className="ml-auto text-sm text-primary-600 font-medium">Edit</button>}
               </div>
               
               {step === 1 && (
@@ -150,7 +150,7 @@ export default function Checkout() {
                     {errors.zipCode && <span className="text-xs text-red-500">{errors.zipCode.message}</span>}
                   </div>
                   <div className="sm:col-span-2 mt-4">
-                    <button type="button" onClick={() => setStep(2)} className="bg-blue-600 text-white font-bold px-6 py-3 rounded-xl hover:bg-blue-700 transition-colors w-full sm:w-auto">
+                    <button type="button" onClick={() => setStep(2)} className="bg-primary-600 text-white font-bold px-6 py-3 rounded-xl hover:bg-primary-700 transition-colors w-full sm:w-auto">
                       Continue to Payment
                     </button>
                   </div>
@@ -159,25 +159,25 @@ export default function Checkout() {
             </div>
 
             {/* Step 2: Payment Details */}
-            <div className={`bg-white rounded-2xl shadow-sm border ${step === 2 ? 'border-blue-500 ring-1 ring-blue-500' : 'border-gray-100'} p-6 opacity-${step < 2 ? '50' : '100'} transition-all`}>
+            <div className={`bg-white rounded-2xl shadow-sm border ${step === 2 ? 'border-primary-500 ring-1 ring-primary-500' : 'border-gray-100'} p-6 opacity-${step < 2 ? '50' : '100'} transition-all`}>
               <div className="flex items-center gap-3 mb-6 border-b pb-4">
-                <CreditCard className={`w-6 h-6 ${step >= 2 ? 'text-blue-600' : 'text-gray-400'}`} />
+                <CreditCard className={`w-6 h-6 ${step >= 2 ? 'text-primary-600' : 'text-gray-400'}`} />
                 <h2 className="text-lg font-bold">2. Payment Method</h2>
               </div>
               
               {step === 2 && (
                 <div>
                   <div className="flex flex-col sm:flex-row gap-4 mb-6">
-                    <label className={`flex-1 border rounded-xl p-4 cursor-pointer transition-all ${paymentMethod === 'card' ? 'border-blue-600 bg-blue-50 ring-1 ring-blue-600' : 'hover:border-blue-300'}`}>
+                    <label className={`flex-1 border rounded-xl p-4 cursor-pointer transition-all ${paymentMethod === 'card' ? 'border-primary-600 bg-primary-50 ring-1 ring-primary-600' : 'hover:border-primary-300'}`}>
                       <div className="flex items-center justify-between">
                         <span className="font-medium flex items-center gap-2"><CreditCard className="w-5 h-5" /> Credit Card</span>
-                        <input type="radio" name="paymentMethod" value="card" checked={paymentMethod === 'card'} onChange={() => setPaymentMethod('card')} className="w-4 h-4 text-blue-600" />
+                        <input type="radio" name="paymentMethod" value="card" checked={paymentMethod === 'card'} onChange={() => setPaymentMethod('card')} className="w-4 h-4 text-primary-600" />
                       </div>
                     </label>
-                    <label className={`flex-1 border rounded-xl p-4 cursor-pointer transition-all ${paymentMethod === 'cod' ? 'border-blue-600 bg-blue-50 ring-1 ring-blue-600' : 'hover:border-blue-300'}`}>
+                    <label className={`flex-1 border rounded-xl p-4 cursor-pointer transition-all ${paymentMethod === 'cod' ? 'border-primary-600 bg-primary-50 ring-1 ring-primary-600' : 'hover:border-primary-300'}`}>
                       <div className="flex items-center justify-between">
                         <span className="font-medium flex items-center gap-2"><Truck className="w-5 h-5" /> Cash on Delivery</span>
-                        <input type="radio" name="paymentMethod" value="cod" checked={paymentMethod === 'cod'} onChange={() => setPaymentMethod('cod')} className="w-4 h-4 text-blue-600" />
+                        <input type="radio" name="paymentMethod" value="cod" checked={paymentMethod === 'cod'} onChange={() => setPaymentMethod('cod')} className="w-4 h-4 text-primary-600" />
                       </div>
                     </label>
                   </div>
@@ -202,7 +202,7 @@ export default function Checkout() {
                     </div>
                   )}
                   
-                  <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-blue-600/30">
+                  <button type="submit" className="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary-600/30">
                     {paymentMethod === 'card' ? `Pay $${finalTotal.toFixed(2)} Securely` : `Confirm Order (Pay $${finalTotal.toFixed(2)} on Delivery)`}
                   </button>
                   

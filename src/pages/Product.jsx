@@ -66,9 +66,9 @@ export default function Product() {
     <div className="py-8 px-4 container mx-auto">
       {/* Breadcrumbs */}
       <div className="flex items-center gap-2 text-sm text-gray-500 mb-6">
-        <Link to="/" className="hover:text-blue-600 transition-colors">Home</Link>
+        <Link to="/" className="hover:text-primary-600 transition-colors">Home</Link>
         <ChevronRight className="w-4 h-4" />
-        <Link to={`/category/${product.category.toLowerCase()}`} className="hover:text-blue-600 transition-colors">{product.category}</Link>
+        <Link to={`/category/${product.category.toLowerCase()}`} className="hover:text-primary-600 transition-colors">{product.category}</Link>
         <ChevronRight className="w-4 h-4" />
         <span className="text-gray-900 font-medium truncate max-w-[200px]">{product.name}</span>
       </div>
@@ -86,7 +86,7 @@ export default function Product() {
                 <button 
                   key={i} 
                   onClick={() => setMainImage(img)}
-                  className={`relative shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${mainImage === img && i === 0 ? 'border-blue-600' : 'border-transparent hover:border-gray-300'}`}
+                  className={`relative shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${mainImage === img && i === 0 ? 'border-primary-600' : 'border-transparent hover:border-gray-300'}`}
                 >
                   <img src={img} alt={`Thumbnail ${i + 1}`} className="w-full h-full object-cover opacity-80 hover:opacity-100" />
                 </button>
@@ -97,7 +97,7 @@ export default function Product() {
           {/* Product Info */}
           <div className="w-full lg:w-1/2 p-8 flex flex-col">
             <div className="mb-2 flex flex-wrap items-center gap-2">
-              <span className="text-sm font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">{product.brand}</span>
+              <span className="text-sm font-medium text-primary-600 bg-primary-50 px-2 py-1 rounded">{product.brand}</span>
               {product.badges?.map(badge => (
                 <span key={badge} className="text-sm font-medium text-orange-600 bg-orange-50 px-2 py-1 rounded">{badge}</span>
               ))}
@@ -138,7 +138,7 @@ export default function Product() {
                       onClick={() => setSelectedColor(color)}
                       className={`px-4 py-2 border rounded-md text-sm font-medium transition-all ${
                         selectedColor === color 
-                          ? 'border-blue-600 bg-blue-50 text-blue-600' 
+                          ? 'border-primary-600 bg-primary-50 text-primary-600' 
                           : 'border-gray-200 text-gray-700 hover:border-gray-300'
                       }`}
                     >
@@ -159,7 +159,7 @@ export default function Product() {
                       onClick={() => setSelectedSize(size)}
                       className={`w-12 h-12 flex items-center justify-center border rounded-md text-sm font-medium transition-all ${
                         selectedSize === size 
-                          ? 'border-blue-600 bg-blue-50 text-blue-600' 
+                          ? 'border-primary-600 bg-primary-50 text-primary-600' 
                           : 'border-gray-200 text-gray-700 hover:border-gray-300'
                       }`}
                     >
@@ -196,7 +196,7 @@ export default function Product() {
               <button 
                 onClick={handleAddToCart}
                 disabled={!product.inStock}
-                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-blue-600/30 disabled:opacity-50 disabled:shadow-none"
+                className="flex-1 bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary-600/30 disabled:opacity-50 disabled:shadow-none"
               >
                 <ShoppingCart className="w-5 h-5" /> Add to Cart
               </button>
@@ -236,7 +236,7 @@ export default function Product() {
               onClick={() => setActiveTab(tab.toLowerCase())}
               className={`flex-1 py-4 px-6 font-medium transition-colors whitespace-nowrap ${
                 activeTab === tab.toLowerCase() 
-                  ? 'text-blue-600 border-b-2 border-blue-600 bg-blue-50/50' 
+                  ? 'text-primary-600 border-b-2 border-primary-600 bg-primary-50/50' 
                   : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
               }`}
             >
@@ -269,8 +269,8 @@ export default function Product() {
           )}
           {activeTab === 'reviews' && (
             <div className="max-w-2xl">
-              <div className="flex items-center gap-8 mb-8 pb-8 border-b border-gray-100">
-                <div className="text-center bg-gray-50 p-6 rounded-2xl w-48 shrink-0">
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-8 pb-8 border-b border-gray-100">
+                <div className="text-center bg-gray-50 p-6 rounded-2xl w-full md:w-48 shrink-0">
                   <div className="text-5xl font-bold text-gray-900 mb-2">{product.rating}</div>
                   <div className="flex justify-center mb-2">
                     {[1,2,3,4,5].map(i => <Star key={i} className={`w-4 h-4 ${i <= Math.round(product.rating) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`} />)}
@@ -326,7 +326,7 @@ export default function Product() {
                   />
                 </div>
                 <div className="p-4 flex flex-col flex-1 border-t border-gray-50">
-                  <span className="font-medium text-gray-900 leading-tight mb-2 group-hover:text-blue-600 line-clamp-2">
+                  <span className="font-medium text-gray-900 leading-tight mb-2 group-hover:text-primary-600 line-clamp-2">
                     {relProduct.name}
                   </span>
                   <div className="flex items-center mb-3">

@@ -33,7 +33,7 @@ export default function SearchResults() {
           <Frown className="w-16 h-16 text-gray-300 mb-4" />
           <h2 className="text-xl font-medium text-gray-600 mb-2">No products found</h2>
           <p className="text-gray-500 mb-6">Try checking your spelling or use more general terms</p>
-          <Link to="/" className="px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors">
+          <Link to="/" className="px-6 py-2 bg-primary-600 text-white rounded-full hover:bg-primary-700 transition-colors">
             Go Back Home
           </Link>
         </div>
@@ -75,7 +75,7 @@ export default function SearchResults() {
               </div>
               <div className="p-4 flex flex-col flex-1">
                 <div className="text-xs text-gray-500 mb-1">{product.category}</div>
-                <span className="font-semibold text-gray-900 leading-tight mb-2 group-hover:text-blue-600 line-clamp-2">
+                <span className="font-semibold text-gray-900 leading-tight mb-2 group-hover:text-primary-600 line-clamp-2">
                   {product.name}
                 </span>
                 <div className="flex items-center mb-3">
@@ -103,7 +103,7 @@ export default function SearchResults() {
                         size: product.sizes?.[0]
                       }));
                     }}
-                    className="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors disabled:opacity-50"
+                    className="w-10 h-10 bg-primary-50 text-primary-600 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors disabled:opacity-50"
                     disabled={!product.inStock}
                   >
                     <ShoppingCart className="w-5 h-5" />

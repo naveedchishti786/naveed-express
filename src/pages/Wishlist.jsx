@@ -25,7 +25,7 @@ export default function Wishlist() {
         </div>
         <h2 className="text-2xl font-bold text-gray-900 mb-2">Your wishlist is empty</h2>
         <p className="text-gray-500 mb-8 text-center max-w-md">Save items you love here to keep track of them or buy them later.</p>
-        <Link to="/" className="bg-blue-600 text-white font-bold px-8 py-3 rounded-full hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20">
+        <Link to="/" className="bg-primary-600 text-white font-bold px-8 py-3 rounded-full hover:bg-primary-700 transition-colors shadow-lg shadow-primary-600/20">
           Discover Products
         </Link>
       </div>
@@ -53,14 +53,14 @@ export default function Wishlist() {
             </div>
             
             <div className="p-4 flex flex-col flex-1 border-t border-gray-50">
-              <Link to={`/product/${item.id}`} className="font-semibold text-gray-900 leading-tight mb-2 hover:text-blue-600 line-clamp-2">
+              <Link to={`/product/${item.id}`} className="font-semibold text-gray-900 leading-tight mb-2 hover:text-primary-600 line-clamp-2">
                 {item.name}
               </Link>
               <div className="font-bold text-lg text-gray-900 mb-4">${item.price.toFixed(2)}</div>
               
               <button 
                 onClick={() => handleMoveToCart(item)}
-                className="mt-auto w-full border border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold py-2.5 rounded-lg flex items-center justify-center gap-2 transition-colors"
+                className="mt-auto w-full border border-primary-600 text-primary-600 hover:bg-primary-50 font-semibold py-2.5 rounded-lg flex items-center justify-center gap-2 transition-colors"
               >
                 <ShoppingCart className="w-4 h-4" /> Move to Cart
               </button>

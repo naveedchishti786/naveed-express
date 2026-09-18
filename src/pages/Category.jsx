@@ -133,7 +133,7 @@ export default function Category() {
         <div className={`bg-white rounded-xl shadow-sm border border-gray-100 p-5 sticky top-24 ${showMobileFilters ? 'block' : 'hidden md:block'}`}>
           <div className="flex items-center justify-between gap-2 mb-6 border-b border-gray-100 pb-4">
             <div className="flex items-center gap-2">
-              <Filter className="w-5 h-5 text-blue-600" />
+              <Filter className="w-5 h-5 text-primary-600" />
               <h2 className="text-lg font-bold">Filters</h2>
             </div>
             <button className="md:hidden text-gray-400" onClick={() => setShowMobileFilters(false)}>✕</button>
@@ -174,7 +174,7 @@ export default function Category() {
                   type="checkbox" 
                   checked={selectedRatings.includes(rating)}
                   onChange={() => handleRatingChange(rating)}
-                  className="rounded text-blue-600 focus:ring-blue-500" 
+                  className="rounded text-primary-600 focus:ring-primary-500" 
                 />
                 <div className="flex items-center">
                   {Array.from({length: rating}).map((_, i) => (
@@ -196,7 +196,7 @@ export default function Category() {
                       type="checkbox" 
                       checked={selectedBrands.includes(brand)}
                       onChange={() => handleBrandChange(brand)}
-                      className="rounded text-blue-600 focus:ring-blue-500" 
+                      className="rounded text-primary-600 focus:ring-primary-500" 
                     />
                     <span className="text-sm text-gray-600">{brand}</span>
                   </label>
@@ -216,7 +216,7 @@ export default function Category() {
             <select 
               value={sortBy} 
               onChange={(e) => setSortBy(e.target.value)}
-              className="border rounded-md px-3 py-2 text-sm focus:outline-none focus:border-blue-500"
+              className="border rounded-md px-3 py-2 text-sm focus:outline-none focus:border-primary-500"
             >
               <option>Best Match</option>
               <option>Price: Low to High</option>
@@ -291,7 +291,7 @@ export default function Category() {
                 </div>
                 
                 <div className={`p-4 flex flex-col flex-1 ${viewMode === 'list' ? 'border-l border-gray-50' : 'border-t border-gray-50'}`}>
-                  <span className="font-medium text-gray-900 leading-tight mb-2 group-hover:text-blue-600 line-clamp-2">
+                  <span className="font-medium text-gray-900 leading-tight mb-2 group-hover:text-primary-600 line-clamp-2">
                     {product.name}
                   </span>
                   
@@ -314,7 +314,7 @@ export default function Category() {
                     </div>
                     <button 
                       onClick={(e) => handleAddToCart(product, e)}
-                      className="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-10 h-10 bg-primary-50 text-primary-600 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                       disabled={!product.inStock}
                     >
                       <ShoppingCart className="w-5 h-5" />

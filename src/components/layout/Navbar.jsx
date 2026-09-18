@@ -8,7 +8,7 @@ export default function Navbar() {
 
   const categories = [
     { name: "SuperDeals", path: "/category/deals", icon: <Tag className="w-4 h-4 text-orange-500" /> },
-    { name: "Plus", path: "/category/plus", icon: <Plus className="w-4 h-4 text-blue-500" /> },
+    { name: "Plus", path: "/category/plus", icon: <Plus className="w-4 h-4 text-primary-500" /> },
     { name: "New Arrivals", path: "/category/new", icon: <Sparkles className="w-4 h-4 text-purple-500" /> },
     { name: "Top Brands", path: "/category/brands", icon: <Award className="w-4 h-4 text-yellow-500" /> },
     { name: "Home & Garden", path: "/category/home", icon: <Home className="w-4 h-4 text-green-500" /> },
@@ -59,7 +59,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <div className="px-6 py-4 mt-2 border-t border-gray-100 bg-gray-50/50 rounded-b-xl">
-                <Link to="/categories" onClick={() => setIsCategoryOpen(false)} className="text-sm font-bold text-blue-600 hover:text-blue-700 hover:underline flex items-center gap-1">
+                <Link to="/categories" onClick={() => setIsCategoryOpen(false)} className="text-sm font-bold text-primary-600 hover:text-primary-700 hover:underline flex items-center gap-1">
                   View All Categories <ChevronDown className="w-4 h-4 -rotate-90" />
                 </Link>
               </div>

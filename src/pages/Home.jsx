@@ -123,7 +123,7 @@ export default function Home() {
                   <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-4 flex flex-col flex-1">
-                  <span className="font-semibold text-gray-900 leading-tight mb-2 group-hover:text-blue-600 line-clamp-2">{product.name}</span>
+                  <span className="font-semibold text-gray-900 leading-tight mb-2 group-hover:text-primary-600 line-clamp-2">{product.name}</span>
                   <div className="mt-auto flex items-end justify-between">
                     <div>
                       <div className="font-bold text-xl text-red-600">${product.price.toFixed(2)}</div>
@@ -141,7 +141,7 @@ export default function Home() {
       <section className="px-4">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold text-gray-900">Explore Categories</h2>
-          <Link to="/categories" className="text-blue-600 hover:underline font-medium text-sm">View All</Link>
+          <Link to="/categories" className="text-primary-600 hover:underline font-medium text-sm">View All</Link>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {MOCK_CATEGORIES.map((category) => (
@@ -195,7 +195,7 @@ export default function Home() {
               </div>
               <div className="p-4 flex flex-col flex-1">
                 <div className="text-xs text-gray-500 mb-1">{product.category}</div>
-                <span className="font-semibold text-gray-900 leading-tight mb-2 group-hover:text-blue-600 line-clamp-2">
+                <span className="font-semibold text-gray-900 leading-tight mb-2 group-hover:text-primary-600 line-clamp-2">
                   {product.name}
                 </span>
                 <div className="flex items-center mb-3">
@@ -223,7 +223,7 @@ export default function Home() {
                         size: product.sizes?.[0]
                       }));
                     }}
-                    className="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors disabled:opacity-50"
+                    className="w-10 h-10 bg-primary-50 text-primary-600 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors disabled:opacity-50"
                     disabled={!product.inStock}
                   >
                     <ShoppingCart className="w-5 h-5" />
@@ -240,9 +240,9 @@ export default function Home() {
         <div className="bg-gray-900 text-white rounded-2xl p-8 md:p-12 text-center">
           <h2 className="text-3xl font-bold mb-4">Subscribe to our Newsletter</h2>
           <p className="text-gray-400 mb-8 max-w-lg mx-auto">Get the latest updates on new products and upcoming sales. Plus, get 10% off your first order!</p>
-          <form className="max-w-md mx-auto flex gap-2" onSubmit={(e) => e.preventDefault()}>
-            <input type="email" placeholder="Enter your email" className="flex-1 px-4 py-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            <button className="px-6 py-3 bg-blue-600 rounded-full font-bold hover:bg-blue-700 transition-colors whitespace-nowrap">Subscribe</button>
+          <form className="max-w-md mx-auto flex flex-col sm:flex-row gap-3" onSubmit={(e) => e.preventDefault()}>
+            <input type="email" placeholder="Enter your email" className="flex-1 px-4 py-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500" />
+            <button className="px-6 py-3 bg-primary-600 rounded-full font-bold hover:bg-primary-700 transition-colors whitespace-nowrap">Subscribe</button>
           </form>
         </div>
       </section>

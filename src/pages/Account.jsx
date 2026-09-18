@@ -31,7 +31,7 @@ export default function Account() {
         <aside className="w-full md:w-64 shrink-0">
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
             <div className="p-6 border-b border-gray-100 flex items-center gap-4">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl">
+              <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 font-bold text-xl">
                 {user.name.charAt(0).toUpperCase()}
               </div>
               <div>
@@ -42,25 +42,25 @@ export default function Account() {
             <nav className="p-2">
               <button 
                 onClick={() => setActiveTab('orders')}
-                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left text-sm font-medium transition-colors ${activeTab === 'orders' ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:bg-gray-50'}`}
+                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left text-sm font-medium transition-colors ${activeTab === 'orders' ? 'bg-primary-50 text-primary-600' : 'text-gray-600 hover:bg-gray-50'}`}
               >
                 <Package className="w-5 h-5" /> Order History
               </button>
               <button 
                 onClick={() => setActiveTab('wishlist')}
-                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left text-sm font-medium transition-colors ${activeTab === 'wishlist' ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:bg-gray-50'}`}
+                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left text-sm font-medium transition-colors ${activeTab === 'wishlist' ? 'bg-primary-50 text-primary-600' : 'text-gray-600 hover:bg-gray-50'}`}
               >
                 <Heart className="w-5 h-5" /> Wishlist ({wishlistItems.length})
               </button>
               <button 
                 onClick={() => setActiveTab('addresses')}
-                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left text-sm font-medium transition-colors ${activeTab === 'addresses' ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:bg-gray-50'}`}
+                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left text-sm font-medium transition-colors ${activeTab === 'addresses' ? 'bg-primary-50 text-primary-600' : 'text-gray-600 hover:bg-gray-50'}`}
               >
                 <MapPin className="w-5 h-5" /> Saved Addresses
               </button>
               <button 
                 onClick={() => setActiveTab('profile')}
-                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left text-sm font-medium transition-colors ${activeTab === 'profile' ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:bg-gray-50'}`}
+                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left text-sm font-medium transition-colors ${activeTab === 'profile' ? 'bg-primary-50 text-primary-600' : 'text-gray-600 hover:bg-gray-50'}`}
               >
                 <User className="w-5 h-5" /> Profile Settings
               </button>
@@ -83,7 +83,7 @@ export default function Account() {
                 <h2 className="text-xl font-bold mb-6">Order History</h2>
                 <div className="space-y-4">
                   {dummyOrders.map(order => (
-                    <div key={order.id} className="border border-gray-100 rounded-xl p-4 flex flex-col sm:flex-row justify-between sm:items-center gap-4 hover:border-blue-100 transition-colors">
+                    <div key={order.id} className="border border-gray-100 rounded-xl p-4 flex flex-col sm:flex-row justify-between sm:items-center gap-4 hover:border-primary-100 transition-colors">
                       <div>
                         <div className="font-bold text-gray-900 mb-1">{order.id}</div>
                         <div className="text-sm text-gray-500">Placed on {new Date(order.date).toLocaleDateString()}</div>
@@ -91,7 +91,7 @@ export default function Account() {
                       <div className="flex items-center gap-8">
                         <div className="text-center">
                           <div className="text-sm text-gray-500 mb-1">Status</div>
-                          <span className={`text-xs font-bold px-2 py-1 rounded-full ${order.status === 'Delivered' ? 'bg-green-100 text-green-700' : 'bg-blue-100 text-blue-700'}`}>
+                          <span className={`text-xs font-bold px-2 py-1 rounded-full ${order.status === 'Delivered' ? 'bg-green-100 text-green-700' : 'bg-primary-100 text-primary-700'}`}>
                             {order.status}
                           </span>
                         </div>
@@ -110,18 +110,18 @@ export default function Account() {
               <div>
                 <h2 className="text-xl font-bold mb-6 flex justify-between items-center">
                   My Wishlist
-                  <Link to="/wishlist" className="text-sm text-blue-600 font-medium hover:underline">View Full Page</Link>
+                  <Link to="/wishlist" className="text-sm text-primary-600 font-medium hover:underline">View Full Page</Link>
                 </h2>
                 {wishlistItems.length === 0 ? (
                   <p className="text-gray-500">Your wishlist is empty.</p>
                 ) : (
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {wishlistItems.slice(0, 4).map(item => (
-                      <Link to={`/product/${item.id}`} key={item.id} className="flex gap-4 border border-gray-100 rounded-lg p-3 hover:border-blue-200">
+                      <Link to={`/product/${item.id}`} key={item.id} className="flex gap-4 border border-gray-100 rounded-lg p-3 hover:border-primary-200">
                         <img src={item.image} alt={item.name} className="w-16 h-16 object-contain" />
                         <div>
                           <p className="font-medium text-gray-900 line-clamp-1">{item.name}</p>
-                          <p className="text-blue-600 font-bold">${item.price.toFixed(2)}</p>
+                          <p className="text-primary-600 font-bold">${item.price.toFixed(2)}</p>
                         </div>
                       </Link>
                     ))}
@@ -136,8 +136,8 @@ export default function Account() {
                   Saved Addresses
                   <button className="text-sm bg-gray-100 hover:bg-gray-200 font-medium px-3 py-1.5 rounded transition-colors">Add New</button>
                 </h2>
-                <div className="border border-blue-100 bg-blue-50/30 rounded-xl p-4 relative">
-                  <span className="absolute top-4 right-4 bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded">Default</span>
+                <div className="border border-primary-100 bg-primary-50/30 rounded-xl p-4 relative">
+                  <span className="absolute top-4 right-4 bg-primary-100 text-primary-700 text-xs font-bold px-2 py-1 rounded">Default</span>
                   <div className="font-bold mb-2">{user.name}</div>
                   <div className="text-gray-600 text-sm space-y-1">
                     <p>123 Main Street</p>
@@ -147,7 +147,7 @@ export default function Account() {
                     <p className="pt-2 text-gray-500">Phone: (555) 123-4567</p>
                   </div>
                   <div className="mt-4 flex gap-3">
-                    <button className="text-sm font-medium text-blue-600 hover:underline">Edit</button>
+                    <button className="text-sm font-medium text-primary-600 hover:underline">Edit</button>
                     <button className="text-sm font-medium text-red-500 hover:underline">Delete</button>
                   </div>
                 </div>
@@ -173,7 +173,7 @@ export default function Account() {
                       <input type="password" placeholder="New Password" className="w-full border rounded-lg px-3 py-2 focus:outline-blue-500" />
                     </div>
                   </div>
-                  <button className="mt-6 bg-blue-600 text-white font-bold px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                  <button className="mt-6 bg-primary-600 text-white font-bold px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors">
                     Save Changes
                   </button>
                 </form>

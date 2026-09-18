@@ -55,9 +55,9 @@ export default function SearchBox() {
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => { if (query.trim()) setShowSuggestions(true); }}
           placeholder="Search for products, brands and more..."
-          className="w-full px-4 py-2 pl-4 pr-12 rounded-full border border-gray-300 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+          className="w-full px-4 py-2 pl-4 pr-12 rounded-full border border-gray-300 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors"
         />
-        <button type="submit" className="absolute right-1 top-1 bottom-1 px-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors flex items-center justify-center">
+        <button type="submit" className="absolute right-1 top-1 bottom-1 px-4 bg-primary-600 text-white rounded-full hover:bg-primary-700 transition-colors flex items-center justify-center">
           <Search className="w-4 h-4" />
         </button>
       </form>

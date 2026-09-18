@@ -76,7 +76,7 @@ export default function TrackOrder() {
               className={`w-full pl-12 pr-4 py-4 bg-gray-50 border rounded-xl focus:bg-white transition-all font-medium ${error ? 'border-red-500 focus:outline-red-500' : 'border-gray-200 focus:outline-blue-500'}`}
             />
           </div>
-          <button disabled={isLoading} type="submit" className="bg-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-blue-700 transition-colors shrink-0 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center min-w-[120px]">
+          <button disabled={isLoading} type="submit" className="bg-primary-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-primary-700 transition-colors shrink-0 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center min-w-[120px]">
             {isLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Track'}
           </button>
         </form>
@@ -87,10 +87,10 @@ export default function TrackOrder() {
         <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 animate-in fade-in slide-in-from-bottom-4 duration-500">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4 border-b border-gray-100 pb-8">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900">Order <span className="text-blue-600">#{orderId}</span></h2>
+              <h2 className="text-2xl font-bold text-gray-900">Order <span className="text-primary-600">#{orderId}</span></h2>
               <p className="text-gray-500 mt-1">Expected Delivery: <span className="font-medium text-gray-800">3-5 Business Days</span></p>
             </div>
-            <div className="bg-blue-50 text-blue-700 px-4 py-2 rounded-lg font-bold border border-blue-100">
+            <div className="bg-primary-50 text-primary-700 px-4 py-2 rounded-lg font-bold border border-primary-100">
               Status: Shipped
             </div>
           </div>
@@ -98,7 +98,7 @@ export default function TrackOrder() {
           <div className="relative">
             {/* Connecting line */}
             <div className="hidden sm:block absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-gray-100 rounded-full z-0"></div>
-            <div className="hidden sm:block absolute left-0 top-1/2 -translate-y-1/2 w-[55%] h-1 bg-blue-600 rounded-full z-0 transition-all duration-1000"></div>
+            <div className="hidden sm:block absolute left-0 top-1/2 -translate-y-1/2 w-[55%] h-1 bg-primary-600 rounded-full z-0 transition-all duration-1000"></div>
 
             <div className="flex flex-col sm:flex-row justify-between gap-8 relative z-10">
               {steps.map((step) => {
@@ -107,10 +107,10 @@ export default function TrackOrder() {
                   <div key={step.id} className="flex sm:flex-col items-center gap-4 sm:gap-2 text-left sm:text-center relative">
                     {/* Mobile vertical line */}
                     {step.id !== steps.length && (
-                      <div className={`sm:hidden absolute left-6 top-14 w-0.5 h-12 ${step.completed ? 'bg-blue-600' : 'bg-gray-100'}`}></div>
+                      <div className={`sm:hidden absolute left-6 top-14 w-0.5 h-12 ${step.completed ? 'bg-primary-600' : 'bg-gray-100'}`}></div>
                     )}
                     
-                    <div className={`w-12 h-12 rounded-full flex items-center justify-center shrink-0 border-4 transition-colors duration-500 ${step.completed ? 'bg-blue-600 border-blue-100 text-white' : 'bg-white border-gray-100 text-gray-300'}`}>
+                    <div className={`w-12 h-12 rounded-full flex items-center justify-center shrink-0 border-4 transition-colors duration-500 ${step.completed ? 'bg-primary-600 border-primary-100 text-white' : 'bg-white border-gray-100 text-gray-300'}`}>
                       <Icon className="w-5 h-5" />
                     </div>
                     
@@ -125,7 +125,7 @@ export default function TrackOrder() {
           </div>
           
           <div className="mt-12 pt-8 border-t border-gray-100 flex justify-center">
-             <Link to="/" className="text-blue-600 font-medium hover:underline flex items-center gap-2">
+             <Link to="/" className="text-primary-600 font-medium hover:underline flex items-center gap-2">
                &larr; Back to Shopping
              </Link>
           </div>
